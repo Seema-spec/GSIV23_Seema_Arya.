@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Movie List Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application that displays a list of movies and their details. It allows users to search for movies and view additional information about each movie.
 
-## Available Scripts
+## How to Run
 
-In the project directory, you can run:
+1. Clone this repository to your local machine.
+2. Navigate to the project directory: `cd movie-list-app`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your web browser and visit: `http://localhost:3000`
 
-### `npm start`
+## Elements Demonstrating Proficiency
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Component Modularity**: The application is structured using reusable React components, promoting code organization and maintainability.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **State Management**: Utilized React hooks like `useState` and `useEffect` for managing component state and fetching data asynchronously.
 
-### `npm test`
+3. **API Integration**: Demonstrated API integration by fetching movie data from a mock `MovieService`, simulating API calls.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Potential Improvements (with 4 More Hours)
 
-### `npm run build`
+1. **Styling**: Enhance the visual appeal and responsiveness of the application using CSS and/or a CSS framework.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Error Handling**: Implement better error handling and user feedback for cases like API errors or empty search results.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Pagination**: Add pagination support for movie list to improve performance and user experience with large datasets.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Detailed Movie View**: Create a separate view to display detailed information about a selected movie.
 
-### `npm run eject`
+## Feedback
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The challenge was a great opportunity to showcase my proficiency in React and frontend development. The provided instructions were clear, and I enjoyed working on the project. The time constraints allowed me to demonstrate key aspects of my skills, and I appreciate the chance to provide feedback for further improvement.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Feel free to reach out if you have any questions or need further clarification about my solution!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

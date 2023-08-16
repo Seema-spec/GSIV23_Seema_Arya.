@@ -4,12 +4,16 @@ import MovieService from '../services/MovieService';
 import _function from '../common/function';
 import search from '../assets/search.png';
 import Home from '../assets/home.png';
+import Pagination from './Pagination';
 import './MovieList.css'
+
+const moviesPerPage = 10;
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [searchString, setSearchString] = useState('');
-  const [searchData, setSearchData] = useState(null);
+  const [searchData, setSearchData] = useState(null); 
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -41,6 +45,14 @@ const MovieList = () => {
     handleSearch();
   }, [searchString]);
 
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
+  const displayedMovies = searchData
+    ? searchData.results
+    : movies.slice((currentPage - 1) * moviesPerPage, currentPage * moviesPerPage);
+
 
   return (
     <div className="container">
@@ -66,40 +78,32 @@ const MovieList = () => {
       </header>
       <div className='list_container' id='movie-card'>
 
-      {(searchData && searchData.results.length > 0) ? (
-          searchData?.results?.map((result) =>
-            <div key={result.id} className='card_container'>
-              <Link to={`/movie/${result.id}`} className='inner_card'>
-                <img
-                  className='img_icon'
-                  src={`https://image.tmdb.org/t/p/w500/${result.poster_path}`}
-                  alt={result.title}
-                />
-              </Link>
-              <div className='inner_card_text'>
-                <div className="card_text">{_function.truncateDescription(result.title, 2)}</div>
-                <div className="card_text">{result.vote_average}</div>
-              </div>
-              <div className="card_text_desc">{_function.truncateDescription(result.overview, 6)}</div>
-            </div>)
-
-        ) : (
-
-          movies?.map((movie) =>
-            <div key={movie.id} className='card_container'>
-              <Link to={`/movie/${movie.id}`} className='inner_card'>
-                <img
-                  className='img_icon'
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                  alt={movie.title}
-                />
-              </Link>
-              <div className='inner_card_text'>
-                <div className="card_text">{_function.truncateDescription(movie.title, 2)}</div>
-                <div className="card_text">{movie.vote_average}</div>
-              </div>
-              <div className="card_text_desc">{_function.truncateDescription(movie.overview, 6)}</div>
-            </div>)
+     
+      {displayedMovies.map((movie) => (
+          <div key={movie.id} className='card_container'>
+            <Link to={`/movie/${movie.id}`} className='inner_card'>
+              <img
+                className='img_icon'
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </Link>
+            <div className='inner_card_text'>
+              <div className="card_text">{_function.truncateDescription(movie.title, 2)}</div>
+              <div className="card_text">{movie.vote_average}</div>
+            </div>
+            <div className="card_text_desc">{_function.truncateDescription(movie.overview, 6)}</div>
+          </div>
+        ))}
+      </div>
+      <div className="pagination">
+        {searchData ? null : (
+          <Pagination
+            currentPage={currentPage}
+            moviesPerPage={moviesPerPage}
+            totalMovies={movies.length}
+            onPageChange={handlePageChange}
+          />
         )}
       </div>
     </div>
