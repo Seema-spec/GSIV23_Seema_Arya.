@@ -7,14 +7,7 @@ const truncateDescription = (description, limit) => {
     return description;
   };
 
-
-//custom logging functions that include additional information, such as timestamps or the source of the log
-function logError(message, error) {
-    console.error(`[${new Date().toISOString()}] ERROR: ${message}`, error);   }
-
-
   export default  {
-    truncateDescription,
-    logError
+    truncateDescription
   }
 
